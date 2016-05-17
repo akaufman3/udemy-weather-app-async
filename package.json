@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/akaufman3/async/issues"
   },
-  "homepage": "https://github.com/akaufman3/async#readme"
+  "homepage": "https://github.com/akaufman3/async#readme",
+  "dependencies": {
+    "request": "^2.60.0"
+  }
 }

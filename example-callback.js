@@ -13,4 +13,7 @@ request({
 		console.log(JSON.stringify(body, null, 4));
 		console.log('It\'s ' + body.main.temp + ' in ' + body.name + '!');
 	}
-})
+});
+
+// shows up before the above console.logs because the request has to wait for the data to be returned
+console.log('After request');

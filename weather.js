@@ -1,9 +1,14 @@
 var request = require('request');
 var key = require('./weatherKeys.js');
 
-var url = 'http://api.openweathermap.org/data/2.5/weather?q=Philadelphia&units=imperial&appid=' + key.api_key;
+module.exports = function(location, callback) {
+	var encodedLocation = encodeURIComponent(location);
+	var url = 'http://api.openweathermap.org/data/2.5/weather?q=' + encodedLocation + '&units=imperial&appid=' + key.api_key;
 
-module.exports = function(callback) {
+	if (!location) {
+		return callback('No location provided');
+	}
+	
 	request({
 		url: url,
 		// want to request json data
